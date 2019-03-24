@@ -1,0 +1,35 @@
+<div class="header">
+    <h1>Peliculas</h1>
+</div>
+
+
+
+<div>
+    <table class="pure-table pure-table-horizontal">
+        <thead>
+            <tr>
+                <th class="col-md">Title</th>
+                <th class="col-md">Fecha de lanzamiento</th>
+                <th class="col-md">Episodio</th>
+                <th class="col-md">Director</th>
+                <th class="col-md">Productor</th>
+            
+            </tr>
+        </thead>
+
+        <tbody>
+        <% @all_films.each do |film|%>
+        <tr >
+                
+                <td class="col-md"><%=link_to film['title'], :controller => "films", 
+                    :action => "index", 
+                    :id => film['url'].split("/").last%></td>
+                <td class="col-md"><%=film['release_date']%></td>
+                <td class="col-md"><%=film['episode_id']%></td>
+                <td class="col-md"><%=film['director']%></td>
+                <td class="col-md"><%=film['producer']%></td>
+        </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>

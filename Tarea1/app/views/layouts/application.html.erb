@@ -2,6 +2,11 @@
 <html>
   <head>
     <title>Tarea1</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" 
+    integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +15,40 @@
   </head>
 
   <body>
+    <header>
+      <nav class= "be-black  large-padding">
+        <ul class= "no-list row center-xs" style="list-style: none;">
+          <li class= "col-md">
+            <h1 class= "no-margin" id="logo">
+                <%= link_to "SWAPI", root_path %>
+            </h1>
+          </li>
+          <li class= "col-md">
+            </li> 
+            <li class= "col-md">
+              </li> 
+          <li class= "col-md">
+              <form class="pure-form">
+              <%= form_tag(search_page_path, :method => "get",   
+              class: 'form-search center') do %>  
+            <div class="input-group">  
+              <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>   
+              <button type="submit" class=" bb pure-button tra">Buscar</button>
+            </div>  
+            <% end %>
+          </form>
+
+
+          </li>
+                 
+        </ul>
+      </nav>
+    </header>
+    
+<div id="layout">
+  <div id="main">
     <%= yield %>
+  </div> 
+</div>
   </body>
 </html>

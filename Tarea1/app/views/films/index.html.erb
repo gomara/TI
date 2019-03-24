@@ -1,0 +1,64 @@
+<div class="header">
+    <h1><%=@data['title']%></h1>
+</div>
+
+<div class="pure-g">
+        <div class="pure-u-1-4"></div>
+        <div class="pure-u-1-4">
+                <h2 class="content-subhead">Episodio: <%=@data['episode_id']%></h2>
+                <h2 class="content-subhead">Director: <%=@data['director']%></h2>
+        </div>
+        <div class="pure-u-1-4">
+                <h2 class="content-subhead">Productores: <%=@data['producer']%></h2>
+                <h2 class="content-subhead">Fecha de lanzamiento: <%=@data['release_date']%></h2>
+        </div>
+        <div class="pure-u-1-4"></div>
+</div>
+
+
+<h2 class="content-subhead">Opening:</h2>
+<p><%=@data['opening_crawl']%></p>
+
+<h2 class="content-subhead">Personajes</h2>
+<div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+        <% @data[:people_names].each do |people|%>
+        <li class="pure-menu-item">
+        <%=link_to people[:name], {:controller => "peoples", 
+        :action => "index", 
+        :id => people[:id]},class: "pure-menu-link"%>
+        </li>
+    <% end %>
+        </ul>
+
+</div>
+
+
+
+<h2 class="content-subhead">Planetas</h2>
+<div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+        <% @data[:planets_names].each do |planet|%>
+            <li class="pure-menu-item">
+                <%=link_to planet[:name], {:controller => "planets", 
+                :action => "index", 
+                :id => planet[:id]}, class: "pure-menu-link"%>
+            </li>
+        <% end %>
+        </ul>
+    </div>
+
+
+<h2 class="content-subhead">Naves Espaciales</h2>
+<div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">    
+        <% @data[:ships_names].each do |ship|%>
+            <li class="pure-menu-item">
+                <%=link_to ship[:name],{:controller => "spaceships", 
+                :action => "index", 
+                :id => ship[:id]}, class: "pure-menu-link"%>
+            </li>
+        <% end %>
+        </ul>
+    </div>
+    
