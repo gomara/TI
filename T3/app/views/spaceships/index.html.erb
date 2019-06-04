@@ -1,0 +1,56 @@
+<div class="header">
+        <h1><%=@data['name']%></h1>
+</div>
+<div class="pure-g">
+        <div class="pure-u-1-4">
+                <h2 class="content-subhead">Modelo: <%=@data['model']%></h2>
+                <h2 class="content-subhead">Marca: <%=@data['manufacturers']%></h2>
+                <h2 class="content-subhead">Precio: <%=@data['costInCredits']%></h2>
+                
+        </div>
+        <div class="pure-u-1-4">
+                <h2 class="content-subhead">Largo: <%=@data['length']%></h2>
+                <h2 class="content-subhead">Velocidad maxima: <%=@data['maxAtmospheringSpeed']%></h2>
+                <h2 class="content-subhead">Personal: <%=@data['crew']%></h2>
+        </div>
+        <div class="pure-u-1-4">
+                <h2 class="content-subhead">Pasajeros: <%=@data['passengers']%></h2>
+                <h2 class="content-subhead">Capacidad de Carga: <%=@data['cargoCapacity']%></h2>
+                <h2 class="content-subhead">Consumibles: <%=@data['consumables']%></h2>
+        </div>
+        <div class="pure-u-1-4">
+                <h2 class="content-subhead">Hyperdrive rating: <%=@data['hyperdriveRating']%></h2>
+                <h2 class="content-subhead">MGLT: <%=@data['MGLT']%></h2>
+                <h2 class="content-subhead">Clase: <%=@data['starshipClass']%></h2>  
+        </div>
+</div>
+
+
+
+<h2 class="content-subhead">Pilotos</h2>
+<div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+        <% @pilots['pilots'].each do |people|%>
+        <li class="pure-menu-item">
+        <%=link_to people['name'], {:controller => "peoples", 
+        :action => "index", 
+        :id => people['id']},class: "pure-menu-link"%>
+        </li>
+    <% end %>
+        </ul>
+
+</div>
+
+
+<h2 class="content-subhead">Peliculas</h2>
+<div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+        <% @films['films'].each do |film|%>
+            <li class="pure-menu-item">
+                <%=link_to film['title'], {:controller => "films", 
+                :action => "index", 
+                :id => film['id']}, class: "pure-menu-link"%>
+            </li>
+        <% end %>
+        </ul>
+</div>

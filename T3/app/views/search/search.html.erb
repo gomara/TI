@@ -1,0 +1,58 @@
+<div class="header">
+<h1>Mostrando resultados para: <a><%=@parameter %></a></h1> 
+</div>
+
+<h2 class="content-subhead">Peliculas</h2>
+<div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+        <% @data[:s_films].each do |film|%>
+            <li class="pure-menu-item">
+                <%=link_to film[:name], {:controller => "films", 
+                :action => "index", 
+                :id => film[:id]}, class: "pure-menu-link"%>
+            </li>
+        <% end %>
+        </ul>
+</div>
+
+<h2 class="content-subhead">Personajes:</h2> 
+    
+<div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+        <% @data[:s_peoples].each do |people|%>
+        <li class="pure-menu-item">
+        <%=link_to people[:name], {:controller => "peoples", 
+        :action => "index", 
+        :id => people[:id]},class: "pure-menu-link"%>
+        </li>
+    <% end %>
+        </ul>
+
+</div>
+
+
+<h2 class="content-subhead">Planetas:</h2> 
+    <div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+        <% @data[:s_planets].each do |planet|%>
+            <li class="pure-menu-item">
+                <%=link_to planet[:name], {:controller => "planets", 
+                :action => "index", 
+                :id => planet[:id]}, class: "pure-menu-link"%>
+            </li>
+        <% end %>
+        </ul>
+    </div>
+
+<h2 class="content-subhead">Naves Espaciales</h2>
+<div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">    
+    <% @data[:s_ships].each do |ship|%>
+        <li class="pure-menu-item">
+            <%=link_to ship[:name],{:controller => "spaceships", 
+            :action => "index", 
+            :id => ship[:id]}, class: "pure-menu-link"%>
+        </li>
+    <% end %>
+    </ul>
+</div>

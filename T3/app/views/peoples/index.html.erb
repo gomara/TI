@@ -1,0 +1,58 @@
+<div class="header">
+    <h1><%=@data['name']%></h1>
+</div>
+<div class="pure-g">
+        <div class="pure-u-1-4"></div>
+        <div class="pure-u-1-4">
+            <h2 class="content-subhead">Altura: <%=@data['height']%></h2>
+            <h2 class="content-subhead">Peso: <%=@data['mass']%></h2>
+            <h2 class="content-subhead">Color de pelo: <%=@data['hairColor']%></h2>
+        </div>
+        <div class="pure-u-1-4">
+            <h2 class="content-subhead">Color de piel: <%=@data['skinColor']%></h2>
+            <h2 class="content-subhead">Color de ojos: <%=@data['eyeColor']%></h2>
+            <h2 class="content-subhead">Año de nacimiento: <%=@data['birthYear']%></h2>
+            <h2 class="content-subhead">Genero: <%=@data['gender']%></h2>
+        </div>
+        <div class="pure-u-1-4"></div>
+</div>
+
+<h2 class="content-subhead">Mundo</h2>
+<div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+            <%=link_to @planets['name'], {:controller => "planets", 
+            :action => "index", 
+            :id => @planets['id']}, class: "pure-menu-link"%>
+        </li>
+    </ul>
+</div>
+
+<h2 class="content-subhead">Naves Espaciales</h2>
+<div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">    
+    <% @ships['starships'].each do |ship|%>
+        <li class="pure-menu-item">
+            <%=link_to ship['name'],{:controller => "spaceships", 
+            :action => "index", 
+            :id => ship['id']}, class: "pure-menu-link"%>
+        </li>
+    <% end %>
+    </ul>
+</div>
+
+
+<h2 class="content-subhead">Peliculas</h2>
+<div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+    <% @films['films'].each do |film|%>
+    <li class="pure-menu-item">
+        <%=link_to film['title'], {:controller => "films", 
+        :action => "index", 
+        :id => film['id']}, class: "pure-menu-link"%>
+    </li>
+    <% end %>
+    </ul>
+</div>
+
+

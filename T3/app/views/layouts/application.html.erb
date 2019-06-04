@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tarea3</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" 
+    integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <nav class= "be-black  large-padding">
+        <ul class= "no-list row center-xs" style="list-style: none;">
+          <li class= "col-md">
+            <h1 class= "no-margin" id="logo">
+                <%= link_to "SWAPI", root_path %>
+            </h1>
+          </li>
+          <li class= "col-md">
+            </li> 
+            <li class= "col-md">
+              </li>
+                 
+        </ul>
+      </nav>
+    </header>
+    
+<div id="layout">
+  <div id="main">
+    <%= yield %>
+  </div> 
+</div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<div class="header">
+    <h1><%=@data['name']%></h1>
+</div>
+
+<div class="pure-g">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-1-4">
+        <h2 class="content-subhead">Diametro: <%=@data['diameter']%></h2>
+        <h2 class="content-subhead">Clima: <%=@data['climates']%></h2>
+        <h2 class="content-subhead">Periodo orbital: <%=@data['orbitalPeriod']%></h2>
+        <h2 class="content-subhead">Periodo de rotacion: <%=@data['rotationPeriod']%></h2>
+    </div>
+    <div class="pure-u-1-4">
+        <h2 class="content-subhead">Gravedad: <%=@data['gravity']%></h2>
+        <h2 class="content-subhead">Terreno: <%=@data['terrains']%></h2>
+        <h2 class="content-subhead">Superficie de agua: <%=@data['surfaceWater']%></h2>
+        <h2 class="content-subhead">Poblacion: <%=@data['population']%></h2>
+    </div>
+    <div class="pure-u-1-4"></div>
+</div>
+
+
+<h2 class="content-subhead">Residentes</h2>
+<div class="pure-menu pure-menu-horizontal">
+    
+<ul class="pure-menu-list">
+<% @residents['residents'].each do |people|%>
+<li class="pure-menu-item">
+        
+<%=link_to people['name'], {:controller => "peoples",  :action => "index", :id => people['id']}, class: "pure-menu-link"%>
+        
+</li>
+<% end %>
+    
+</ul>
+
+
+</div>
+
+<h2 class="content-subhead">Peliculas</h2>
+<div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+    <% @films['films'].each do |film|%>
+    <li class="pure-menu-item">
+    <%=link_to film['title'],{ :controller => "films", 
+    :action => "index", 
+    :id => film['id']},class:"pure-menu-link"%>
+    </li>
+    <% end %>
+    </ul>
+</div>
+
+
+ 
