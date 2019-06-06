@@ -9,7 +9,12 @@
                 <h2 class="content-subhead">Director: <%=@data['director']%></h2>
         </div>
         <div class="pure-u-1-4">
-                <h2 class="content-subhead">Productores: <%=@data['producers']%></h2>
+                <h2 class="content-subhead">Productores: 
+                        <%@data['producers'].each do |pr|%>
+                        <%=pr%>
+                <%end%>
+                
+                </h2>
                 <h2 class="content-subhead">Fecha de lanzamiento: <%=@data['releaseDate']%></h2>
         </div>
         <div class="pure-u-1-4"></div>

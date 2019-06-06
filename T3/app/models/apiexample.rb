@@ -42,6 +42,7 @@ class Dog
                       openingCrawl
                       director
                       producers
+                      episodeID
                       releaseDate
                       characterConnection{
                         characters{
